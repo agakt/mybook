@@ -1,0 +1,28 @@
+{
+  "name": "mybook",
+  "version": "1.0.0",
+  "description": "README",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agakt/mybook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agakt/mybook/issues"
+  },
+  "homepage": "https://github.com/agakt/mybook#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "fs": "0.0.2",
+    "multer": "^1.1.0",
+    "nodemon": "^1.9.1",
+    "xml2js": "^0.4.16"
+  }
+}
