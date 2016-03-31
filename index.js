@@ -20,7 +20,15 @@ var status = {
 	wordsOfPage :Number,
 	examples:Number,
 	problems:Number,
-}
+};
+
+var tagCount = {
+	tagName : String,
+	count : Number
+};
+
+var tagsInBook = new Array();
+var numOfTags=0;
 
 app.use(express.static(path.join(__dirname,'public')));
 app.set('view engine','ejs');
@@ -38,17 +46,36 @@ app.post('/result',upload.single('book'),function(req,res,next) {
 			html : xml,
 			scripts: ["http://code.jquery.com/jquery.js"],
 			done : function(errors, window) {
-				x=window.$('book').children().length;
-				for(var index=0;index<x;index++) {
-					console.log(window.$('book').children()[index].nodeName);
+				analyzeBook(window,'book');
+				for(var i=0;i<numOfTags;i++) {
+					console.log(tagsInBook[i].tagName + " " + tagsInBook[i].count);
 				}
-				console.log(window.$('book').children()[0].text.length);
 			}
 		})
-		//console.log(xml);
 	})
+	
 	res.json({success:true});
 })
 app.listen('8000',function() {
 	console.log('Server is working!!');
 });
+
+var analyzeBook= function(window,root) {
+	var i=0;
+	for(i=0;i<numOfTags;i++) {
+		if(tagsInBook[i].tagName==root) {
+			tagsInBook[i].count++;
+			break;
+		}
+	}
+	if(i==numOfTags) {
+		var newTag=new Object();
+		newTag.tagName=root;
+		newTag.count=0;
+		tagsInBook[numOfTags++]=newTag;
+	}
+	var numOfChilds = window.$(root).children().length;
+	for(var index=0;index<numOfChilds;index++) {
+		analyzeBook(window,window.$(root).children()[index].nodeName);
+	}
+};
