@@ -19,7 +19,7 @@ var status = {
 	totalPages:Number,
 	wordsOfPage :Number,
 	examples:Number,
-	problems:Number,
+	questions:Number,
 };
 
 var tagCount = {
@@ -27,6 +27,8 @@ var tagCount = {
 	count : Number
 };
 
+var enumObj = new Object();
+enumObj.tagName = {pharse:0, screen:1, code:2, example:3, question:4};
 var tagsInBook = new Array();
 var numOfTags=0;
 
@@ -47,33 +49,26 @@ app.post('/result',upload.single('book'),function(req,res,next) {
 			scripts: ["http://code.jquery.com/jquery.js"],
 			done : function(errors, window) {
 				analyzeBook(window,'book');
-				for(var i=0;i<numOfTags;i++) {
-					console.log(tagsInBook[i].tagName + " " + tagsInBook[i].count);
-				}
+				status.texts=tagsInBook.PHARSE;
+				status.pictures=tagsInBook.SCREEN;
+				status.codes=tagsInBook.CODE;
+				//status.LengthOfChapter=tagsInBook.PHARSE;
+				status.examples=tagsInBook.EXAMPLE;
+				status.questions=tagsInBook.QUESTION;
+				res.json(status);
 			}
 		})
 	})
-	
-	res.json({success:true});
 })
 app.listen('8000',function() {
 	console.log('Server is working!!');
 });
 
 var analyzeBook= function(window,root) {
-	var i=0;
-	for(i=0;i<numOfTags;i++) {
-		if(tagsInBook[i].tagName==root) {
-			tagsInBook[i].count++;
-			break;
-		}
-	}
-	if(i==numOfTags) {
-		var newTag=new Object();
-		newTag.tagName=root;
-		newTag.count=0;
-		tagsInBook[numOfTags++]=newTag;
-	}
+	if(tagsInBook[root]==null)
+		tagsInBook[root]=1;
+	else 
+		tagsInBook[root]++;
 	var numOfChilds = window.$(root).children().length;
 	for(var index=0;index<numOfChilds;index++) {
 		analyzeBook(window,window.$(root).children()[index].nodeName);
