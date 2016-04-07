@@ -10,7 +10,7 @@ var mongoose = require('mongoose');
 
 var upload=multer({dest:'./tmp/uploads/'});
 var app=express();
-mongoose.connect("mongodb://test:123@ds025399.mlab.com:25399/agaktdb10");
+mongoose.connect("mongodb://agakt:agakt@52.68.212.127:27017/agaktdb10");
 var db=mongoose.connection;
 
 var filename;
