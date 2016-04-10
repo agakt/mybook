@@ -1,0 +1,107 @@
+
+.container {
+  width : 1200px;
+}
+
+.slider-dots {
+  list-style: none;
+  display: inline-block;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.arrow-prev {
+  margin-right: 45px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 9px;
+}
+
+.arrow-next {
+  margin-left: 45px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 9px;
+}
+.slider-dots li {
+  color: #bbbcbc;
+  display: inline;
+  font-size: 30px;
+  margin-right: 5px;
+}
+.slider-dots li.active-dot {
+  color: #363636;
+}
+.slider-nav {
+  text-align: center;
+  margin-top: 20px;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-bottom: 1px solid #ddd;
+}
+
+.slide {
+  background-size: cover;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #ddd;
+  
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  
+  font-size: 15px;
+  padding: 10px;
+  margin-top: 1px;
+}
+
+.footer {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid #ddd;
+  
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  
+  font-size: 17px;
+  padding: 15px;
+  text-align: right;
+}
+.slide {
+  background: transparent url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/feature-gradient-transparent.png') center center no-repeat;
+  background-size: cover;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.active-slide {
+	display: block;
+}
+.nav_input {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 100;
+  margin-top: 10px
+}
+.slide img {
+  width: 400px;
+  height: 300px;
+  margin-left: 10px;
+}
+.slide p {
+  text-align: center;
+  font-weight: 100;
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
+}

@@ -1,19 +1,69 @@
-<html>
-	<head>
-		<title>MyBook</title>
-	</head>
-	<body>
-		<h1>Welcome Mybook site!!</h1><br>
-		<h4>This site analyze the book's characteristics<h4><br>
-
-		<div class="form">
-			<div class="form-inform">
-				<p>Please upload your book's xml file which follow Docbook.dtd</p>
+<!DOCTYPE html>
+<head>
+<title>MyBook</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet'>
+<link href='/style/style.css' rel='stylesheet' type="text/css">
+</head>
+<body>
+<hr>
+<div id="wrap">
+	<div class="header">
+		<h1 class="logo"><a href="#">MyBooks</a></h1>
+		<h3 class="logo_description">There are no difficult studies. There are only difficult book.</h3>
+	</div>
+	<div class="slider">
+		<div class="slide active-slide">
+			<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<img src="/img/books-tassel.jpg">
+				</div>
+				<div class="col-md-5">
+					<div class="main_description_intro">
+						<p>You can meet many books easily but only a few books can satisfy you!</p> <p>I want to help you find a your book!</p>
+					</div>
+				</div>
 			</div>
-			<form method="post" action="/result" enctype="multipart/form-data">
-			<input type="file" name="book" value="Browse">
-			<button type="submit">Submit</button>
-			</form>
+			</div>
 		</div>
-	</body>
-<html>
+
+		<div class="slide">
+			<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<img src="/img/test.png">
+				</div>
+				<div class="col-md-5">
+					<div class="main_description_how_to_use">
+						<p>I just want you to input your friendly book you know, then I will recommand other books that can be your new friend.</p>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="slider-nav">
+      <a href="#" class="arrow-prev"><img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-prev.png"></a>
+      <ul class="slider-dots">
+        <li class="dot active-dot">&bull;</li>
+        <li class="dot">&bull;</li>
+      </ul>
+      <a href="#" class="arrow-next"><img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-next.png"></a>
+    </div> 
+    <div class="nav_input">
+    	<a href="#" class="input_link">Click to find your new friend!</a>
+    </div>
+	<div class="footer">
+		<div class="maker">
+			agakt
+		</div>
+		<div class="connect">
+			phone_number : 010-5317-8656<br>
+			github name : agakt
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>
