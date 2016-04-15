@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet'>
+<link href='/style/input_style.css' rel='stylesheet' type="text/css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="/input.js"></script>
+<title>MyBook</title>
+</head>
+<body>
+	<div class='main_title'>
+		<h1>Input your type</h1>
+	</div>
+	
+	<table id='likes_input' name='likes_input'>
+	<tr><th colspan="2">Select your like</th><th>&nbsp;</th><th colspan="2">Your choices</th></tr>
+	<tr><td rowspan="2" colspan="2">
+		subject<select class="subject" id='subject'>
+			<option value="1"> WEB
+			<option value="2"> DB
+			<option value="3"> Android
+			<option value="4"> Network
+		</select>
+		<td>&nbsp;</td><td colspan="2" rowspan="4">
+			<select size="10" id="likes" class="likes" style="width: 300px"></select>
+			</td></tr>
+			<tr><td><button class="add_list">&gt;</button></td></tr>
+			<tr><td rowspan="2" colspan="2"><select class="title" id='title'>
+		</select></td><td><button class="sub_list">&lt;</button></td></tr>
+			<tr><td>&nbsp;</td></tr>
+	</table>
+
+	<div class='resultGo'>
+		<p>If finish your input, Click here!</p>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>

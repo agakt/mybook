@@ -10,8 +10,8 @@ var mongoose = require('mongoose');
 
 var upload=multer({dest:'./tmp/uploads/'});
 var app=express();
-mongoose.connect("mongodb://agakt:agakt@52.68.212.127:27017/agaktdb10");
-var db=mongoose.connection;
+//mongoose.connect("mongodb://agakt:agakt@52.68.212.127:27017/agaktdb10");
+//var db=mongoose.connection;
 
 var filename;
 var status = {
@@ -42,9 +42,9 @@ var BookData = mongoose.model('book',bookSchema);
 
 var tagsInBook = new Array();
 
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine','ejs');
-
+app.set('views',__dirname+'/views');
 app.get('/',function(req,res) {
 	res.render('main');
 });
@@ -85,6 +85,10 @@ app.listen('8000',function() {
 	console.log('Server is working!!');
 });
 
+app.get('/input',function(req,res) {
+	res.render('input');
+});
+/*
 db.once('open',function() {
 	console.log('DB connected');
 });
@@ -92,7 +96,7 @@ db.once('open',function() {
 db.on('error', function() {
 	console.log("DB Error : " ,error);
 });
-
+*/
 var analyzeBook= function(window,root) {
 	root=root.toLowerCase();
 	if(tagsInBook[root]==null)
