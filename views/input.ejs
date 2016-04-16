@@ -2,20 +2,23 @@
 <head>
 <meta charset="utf-8">
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <link href='/style/input_style.css' rel='stylesheet' type="text/css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="/input.js"></script>
 <title>MyBook</title>
 </head>
 <body>
-	<div class='main_title'>
+<div class="container">
+	<div class='header'>
 		<h1>Input your type</h1>
 	</div>
 	
+	<div class="form">
 	<table id='likes_input' name='likes_input'>
-	<tr><th colspan="2">Select your like</th><th>&nbsp;</th><th colspan="2">Your choices</th></tr>
+	<tr><th colspan="2">Select your like</th><th class="center_cell" style="width: 30px">&nbsp;</th><th colspan="2">Your choices</th></tr>
 	<tr><td rowspan="2" colspan="2">
-		subject<select class="subject" id='subject'>
+		subject : <select class="subject" id='subject'>
 			<option value="1"> WEB
 			<option value="2"> DB
 			<option value="3"> Android
@@ -25,14 +28,14 @@
 			<select size="10" id="likes" class="likes" style="width: 300px"></select>
 			</td></tr>
 			<tr><td><button class="add_list">&gt;</button></td></tr>
-			<tr><td rowspan="2" colspan="2"><select class="title" id='title'>
+			<tr><td rowspan="2" colspan="2">Book title : <select class="title" id='title'>
 		</select></td><td><button class="sub_list">&lt;</button></td></tr>
 			<tr><td>&nbsp;</td></tr>
 	</table>
-
+	</div>
 	<div class='resultGo'>
 		<p>If finish your input, Click here!</p>
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</div>
 </body>
 </html>

@@ -8,9 +8,14 @@ var main= function() {
 	$('.subject').on('change',setTitles);
 
 	$('.add_list').click(addList);
-	
+	$('.sub_list').click(delList);
 }
 
+var delList = function() {
+	var like_list = document.getElementById('likes');
+	var selected=  like_list.options.selectedIndex;
+	like_list.remove(selected);
+}
 var addList = function() {
 	var bookTitle = $('.title :selected').text();
 	var newOption = document.createElement('option');
