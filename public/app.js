@@ -1,7 +1,12 @@
+/*
+	This is a javascript file which handle the http://localhost:8000
+*/
 var main= function() {
+	alert('app.js start!');
 	var $arrow_prev = $('.arrow-prev');
 	var $arrow_next = $('.arrow-next');
 
+	// Change the slide which show to user
 	$arrow_next.click(function() {
 		var currentSlide = $('.active-slide');
 		var nextSlide = currentSlide.next();
